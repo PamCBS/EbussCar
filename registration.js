@@ -23,37 +23,39 @@ console.log(users)
 submitButton.onclick = function(){
     console.log("clicked")
 
-    if (){
-        location="./main.html";
+    if (passwordInput==""){
+        alert("Please enter a password. The password must be at least 8 characters.")
     }
-    if(passwordInput.lenght <=7){
+    var passwordInputValue=passwordInput.value
+    if(passwordInputValue.lenght <=7){
         alert("The password must be at least 8 characters.")
-        return false
+        
     };
+    
 
     if(passwordInput.value !== repeatPasswordInput.value){
         alert("Your password does not match. Please try again.")
-        return false
+        
     };
+ 
 
 
-
-/*    var emailInputValue=emailInput.value;
-    var domain="@student.cbs.dk";
-    if(emailInputValue.endsWith("@student.cbs.dk", 15)!==domain){
-        alert("This is not CBS student email. Please try again.")
-        return false
-    }
-*/
+    var emailInputValue=emailInput.value;
+    
+    if(emailInputValue.endsWith("@student.cbs.dk", 15)!==false){}
+    else
+    alert("This is not CBS student email. Please try again.")
+        
+    
     if(termsInput=false){
         alert ("You must accept Terms and Conditions to complete registration")
-        return false
+        
     }
 
     else{
     users.push(new User(firstNameInput.value, lastNameInput.value, usernameInput.value, emailInput.value, DofBInput.value, passwordInput.value, repeatPasswordInput.value))
     console.log(users)
-    
+    location="./driverWall.html";
     }
 }
 
