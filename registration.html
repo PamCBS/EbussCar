@@ -1,3 +1,4 @@
+   <!-- comments in HTML look like this -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,53 +9,30 @@
 </head>
 
 <body>
-    <!-- comments in HTML look like this -->
+    <!-- Navigation bar -->
+    <div><a href="./registration.html">Register</a></div>
+    <div><a href="./login.html">Log In</a></div>
+    <div><a href="#">About us</a></div>
+    <div><a href="./driverWall.html">Home</a></div>
+
+    <!-- end of Navigation bar -->
+ 
     <h1>Create a new User</h1>
-    <div><span>First Name:</span>
-    <input type="text" id="first-name">
-    </div>
-    <div>
-        <span>Last Name:</span>
-        <input type="text" id="last-name">
-    </div>
-        <span>Username:</span>
-        <input type="text" id="username">
-    </div> 
-    
-    <div>
-        <span>Email:</span>
-        <input type="email" id="email">
-        <span> Please provide your CBS student email</span>
-    </div>
-    
-    <div>
-        <form>
-            <label for="inputDofB">Date Of Birth: </label><input type="date" id="date-of-birth">
-        </form>
-    </div>
-
-    <div>
-        <span>Password:</span>
-        <input type="password" id="password">
-    </div>
-    <div>
-        <span>Repeat password:</span>
-        <input type="password" id="repeat-password">
-    </div>
-
-    <div>
-        <input type="checkbox" id="terms">
-        <span>I agree to the </span><a href="#">Terms and Conditions</a>
-    </div>
-    <div>
-        <input type="button" value="Complete registration" id="submit-btn">
-    </div>
-    <div><span>Already have an account? </span><a href="./login.html">Log In</a></div>
+    <form id="registartion-form">
+        <div><span>First Name:</span><input type="text" id="first-name" placeholder="Provide your first name"></div>
+        <div><span>Last Name:</span><input type="text" id="last-name" placeholder="Provide your last name"></div>
+        <div><span>Username:</span><input type="text" id="username" placeholder="Choose a username"></div> 
+        <div><span>Email:</span><input type="email" id="email" placeholder="Please provide your CBS student email"></div>
+        <div><form><label for="inputDofB">Date Of Birth: </label><input type="date" id="date-of-birth"></form></div>
+        <div><span>Password:</span><input type="password" id="password" placeholder="Select a password"></div>
+        <div><span>Repeat password:</span><input type="password" id="repeat-password" placeholder="Repeat the password"></div>
+        <div><input type="checkbox" id="terms"><span>I agree to the </span><a href="#">Terms and Conditions</a></div>
+        <div><input type="button" value="Complete registration" id="submit-btn"></div>
+        <div><span>Already have an account? </span><a href="./login.html">Log In</a></div>
+    </form>
 
     <script src="./Driver.js"></script>
-
     <script src ="./database.js"></script>
-
     <script src="./registration.js"></script>
 </body>
 </html>
