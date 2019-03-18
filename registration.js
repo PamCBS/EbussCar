@@ -21,48 +21,49 @@ console.log(users)
 //triger the click button
 //create a new user and add to array
 
-submitButton.onclick = function(){
-    console.log("clicked")
-    // make sure that user fills out all fields  
+
+function conditions(){
+    // make sure that user fills  all fields  
     if (firstNameInput.value.length === 0 || lastNameInput.value.length === 0 ||usernameInput.value.length === 0 || emailInput.value.length === 0 || DofBInput.value.length === 0 || passwordInput.value.length === 0 || repeatPasswordInput.value.length === 0) {
         alert('You need to fill out all fields in order to sign up');
         return false;
     }
-        //why does that block the rest of my code?
-    else if (passwordInput==""){
-        alert("Please enter a password. The password must be at least 8 characters.")
-    }
-
-    //this does not work either 
-    else if(passwordInput.value.length <=7){
+   
+    //We already checked if there is any password entered but now we check if the password has at least 8 characters
+    if(passwordInput.value.length <=7){
         alert("The password must be at least 8 characters.")
       return false  
     };
     
-
     if(passwordInput.value !== repeatPasswordInput.value){
         alert("Your password does not match. Please try again.")
-        
     };
- 
-    
+     
     if(emailInput.value.endsWith("@student.cbs.dk")!==false){
         return true
         }
-    else
+    else{
     alert("This is not CBS student email. Please try again.")
-        
-    function termsChecked
-    if(termsInput==false){
-        alert ("You must accept Terms and Conditions to complete registration")
-        
-    }
+    };
 
- //   if(termsInput=true && repeatPasswordInput==passwordInput) {
-    users.push(new User(firstNameInput.value, lastNameInput.value, usernameInput.value, emailInput.value, DofBInput.value, passwordInput.value, repeatPasswordInput.value))
-    console.log(users)
-    
- 
+    termsChecked();
 }
 
+submitButton.onclick = function(){
+    console.log("clicked")
+    conditions()
+    users.push(new User(firstNameInput.value, lastNameInput.value, usernameInput.value, emailInput.value, DofBInput.value, passwordInput.value, repeatPasswordInput.value))
+    console.log(users)
+}
 
+function termsChecked(){
+    if (termsInput.checked==true){
+        return true
+    } else{
+        alert ("You must accept Terms and Conditions to complete registration")
+    }
+}
+
+//function registrationCompleted(){
+//    for (user=1)
+//}
