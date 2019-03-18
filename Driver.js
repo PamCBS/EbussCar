@@ -1,6 +1,5 @@
 //for driver's data: 
 //driver is an object, where we store information about name, birthdate, car, email etc
-//var User[i]= [{name},{surname},{email},{drivingLicense}]
 //for every class that you create, build a individual JS.
 
 console.log("Driver.js loaded")
