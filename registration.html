@@ -12,13 +12,14 @@
     <!-- Navigation bar -->
     <div><a href="./registration.html">Register</a></div>
     <div><a href="./login.html">Log In</a></div>
-    <div><a href="#">About us</a></div>
+    <div><a href="./About.html">About us</a></div>
     <div><a href="./driverWall.html">Home</a></div>
 
     <!-- end of Navigation bar -->
  
     <h1>Create a new User</h1>
     <form id="registartion-form">
+        <span id="loginResult">Please provide us with infomration about you.</span>
         <div><span>First Name:</span><input type="text" id="first-name" placeholder="Provide your first name"></div>
         <div><span>Last Name:</span><input type="text" id="last-name" placeholder="Provide your last name"></div>
         <div><span>Username:</span><input type="text" id="username" placeholder="Choose a username"></div> 
@@ -26,10 +27,11 @@
         <div><form><label for="inputDofB">Date Of Birth: </label><input type="date" id="date-of-birth"></form></div>
         <div><span>Password:</span><input type="password" id="password" placeholder="Select a password"></div>
         <div><span>Repeat password:</span><input type="password" id="repeat-password" placeholder="Repeat the password"></div>
-        <div><input type="checkbox" id="terms" onclick="termsChecked()"><span>I agree to the </span><a href="#">Terms and Conditions</a></div>
+        <div><input type="checkbox" id="terms"><span>I agree to the </span><a href="#">Terms and Conditions</a></div>
         <!-- <div><input type="text" id="terms-checked" style="display:none" value="Checkbox is checked!"></div> -->
-        <div><input type="button" value="Complete registration" id="submit-btn" onclick="registartionCompleted()"></div>
+        <div><input type="button" value="Complete registration" id="submit-btn"></div>
         <div><span>Already have an account? </span><a href="./login.html">Log In</a></div>
+        
     </form>
 
     <script src="./user.js"></script>
