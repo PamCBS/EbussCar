@@ -37,8 +37,9 @@ submitButton.onclick = function(){
         return false
     }
 
-    if(passwordInput.value.length <=7){
-        resultSpan.innerText ="The password must be at least 8 characters."
+    // checking for conditions that password must meet
+    if(passwordInput.value.length <=7 && passwordInput.value.lenght ){
+        resultSpan.innerText ="The password must be at least 8 characters, inlcluding at least one number."
       return false  
     }
 
@@ -69,11 +70,12 @@ submitButton.onclick = function(){
 
         users.push(new User(firstName, lastName, username, email, DofB, password))
         console.log(users)
+        window.location.assign="./login.html" //this doesnt work for some reason?
     }else {
         resultSpan.innerText ="You must accept Terms and Conditions to complete registration"
         return false
     }     
 }//close functions
 
-// store sign up input in new user
+
 

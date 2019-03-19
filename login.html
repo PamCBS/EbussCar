@@ -11,15 +11,17 @@
     <!-- end of Navigation bar -->
     <h1>Login page</h1>
     <form id="login-form">
+        <span id=resultSpan>Please provide with your login information</span>
         <div><span>Email:</span><input type="email" name="login-email" id="login-email" placeholder="Enter your CBS email"></div>    
         <div><span>Password:</span><input type="password" name="login-password" id="login-password" placeholder="Enter your password">
         <input type="checkbox" onclick="showPassword()"><span>Show Password </span></div><!-- a functionality to see the password after typing to make sure there are no typos -->
         <div><span>Forgot password? </span><a href="#">Reset your password</a></div>
         <button type="submit" id="login-btn">Login</button>
         <label><input type="checkbox" checked="checked" name="remember" id="remember-me"> Remember me</label>
+        <div>If you do not have an account, register <a href="./register.html">here</a>.</div>
     </form>
 <script src="./login.js"></script>
-<script src="./Driver.js"></script>
+<script src="./user.js"></script>
 
 </body>
 </html>
