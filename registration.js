@@ -76,6 +76,3 @@ submitButton.onclick = function(){
         return false
     }     
 }//close functions
-
-
-
