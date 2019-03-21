@@ -70,7 +70,7 @@ submitButton.onclick = function(){
 
         users.push(new User(firstName, lastName, username, email, DofB, password))
         console.log(users)
-        window.location.assign="./login.html" //this doesnt work for some reason?
+        window.location.href="./login.html" //this doesnt work for some reason?
     }else {
         resultSpan.innerText ="You must accept Terms and Conditions to complete registration"
         return false
