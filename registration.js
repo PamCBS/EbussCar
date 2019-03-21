@@ -2,27 +2,27 @@
 console.log("registration.js loaded")
 //this is debugging tip
 
- // Bind the two input fields and get the value
-var submitButton=document.getElementById('submit-btn')
-var firstNameInput=document.getElementById("first-name")
-//this is not a var that holds value but a variable that binds the documents
-//it make is it easier to code by calling var name and not getElementByID evvery time.
-var lastNameInput=document.getElementById("last-name")
-var usernameInput=document.getElementById("username")
-var emailInput=document.getElementById("email")
-var DofBInput=document.getElementById("date-of-birth")
-var passwordInput=document.getElementById("password")
-var repeatPasswordInput=document.getElementById("repeat-password")
-var termsInput=document.getElementById("terms")
-var resultSpan = document.getElementById('loginResult');
+ // Bind the two input fields and get the value. By using const we make the scope of the variables global
+const submitButton=document.getElementById('submit-btn')
+const firstNameInput=document.getElementById("first-name")
+//this is not a var that holds value but a variable that binds the documents.
+//it make is it easier to code by calling var name and not getElementByID every time.
+const lastNameInput=document.getElementById("last-name")
+const usernameInput=document.getElementById("username")
+const emailInput=document.getElementById("email")
+const DofBInput=document.getElementById("date-of-birth")
+const drivingLicenseYes=document.getElementById("driving-license-yes")
+const drivingLicenseNo=document.getElementById("driving-license-no")
+const passwordInput=document.getElementById("password")
+const repeatPasswordInput=document.getElementById("repeat-password")
+const termsInput=document.getElementById("terms")
+const resultSpan = document.getElementById('loginResult');
+
 console.log(users)
 //just to check that we have at least one registered user (hardcoded)
 
-
 //triger the click button
 //create a new user and add to array
-
-
 submitButton.onclick = function(){
     console.log("clicked")
         // make sure that user fills all fields  
@@ -30,14 +30,17 @@ submitButton.onclick = function(){
         resultSpan.innerText ='You need to fill out all fields in order to sign up';
         return false;
     };
-       //We already checked if there is any password entered but now we check if the password has at least 8 characters
+    
 
+
+    //validating email in a kinda primitove way. We could play with .val method but I am not sure how.
     if(emailInput.value.endsWith("@student.cbs.dk")===false){
         resultSpan.innerText ="This is not CBS student email. Please try again."
         return false
     }
 
     // checking for conditions that password must meet
+    //We already checked if there is any password entered but now we check if the password has at least 8 characters
     if(passwordInput.value.length <=7){
         resultSpan.innerText ="The password must be at least 8 characters."
       return false  
@@ -52,6 +55,8 @@ submitButton.onclick = function(){
         return false
     };
 
+    //place for driving license if statement
+    
         // check if the email address is already stored in local storage
     for (let i=0; i<users.length; i++){
         if (emailInput.value===users[i].email){
