@@ -38,8 +38,8 @@ submitButton.onclick = function(){
     }
 
     // checking for conditions that password must meet
-    if(passwordInput.value.length <=7 && passwordInput.value.lenght ){
-        resultSpan.innerText ="The password must be at least 8 characters, inlcluding at least one number."
+    if(passwordInput.value.length <=7){
+        resultSpan.innerText ="The password must be at least 8 characters."
       return false  
     }
 
@@ -76,6 +76,3 @@ submitButton.onclick = function(){
         return false
     }     
 }//close functions
-
-
-

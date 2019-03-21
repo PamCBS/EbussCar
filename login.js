@@ -8,7 +8,7 @@ loginButton.onlick = function(){
 
   if(emailLoginInput.value.length == 0 || passwordLoginInput.value.length == 0){
     // We set the resultspan with a new text (old is in html) and return false to get out of this function
-    resultSpan.innerText = "You need to enter a username and password in order to use our system";
+    resultSpan.innerText = "You need to enter a username and password in order to use our platform.";
     return false;
   }
   //a functionality that checks if the email address already exists
@@ -16,12 +16,13 @@ loginButton.onlick = function(){
     if(emailLoginInput.value === users[i].email){
       return true;
     } else {
-      resultSpan.innerText ="Email address is not registered"
+      resultSpan.innerText ="Email address is not registered in our system."
     }
   }    	
   //a functionality that checks if the input password is the same as registered password
   for (let i=0; i<users.length; i++){
     if (passwordLoginInput.value===users[i].password){
+      window.location.assign="./driverWall.html"//doesnt work
       return true
     } else{
       resultSpan.innerText="Wrong password, try again."
