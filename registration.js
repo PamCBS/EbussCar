@@ -11,12 +11,12 @@ const lastNameInput=document.getElementById("last-name")
 const usernameInput=document.getElementById("username")
 const emailInput=document.getElementById("email")
 const DofBInput=document.getElementById("date-of-birth")
-const drivingLicenseYes=document.getElementById("driving-license-yes")
-const drivingLicenseNo=document.getElementById("driving-license-no")
 const passwordInput=document.getElementById("password")
 const repeatPasswordInput=document.getElementById("repeat-password")
 const termsInput=document.getElementById("terms")
 const resultSpan = document.getElementById('loginResult');
+
+
 
 console.log(users)
 //just to check that we have at least one registered user (hardcoded)
@@ -55,7 +55,7 @@ submitButton.onclick = function(){
         return false
     };
 
-    //place for driving license if statement
+    
     
         // check if the email address is already stored in local storage
     for (let i=0; i<users.length; i++){
@@ -74,10 +74,12 @@ submitButton.onclick = function(){
         var password = passwordInput.value
 
         users.push(new User(firstName, lastName, username, email, DofB, password))
+        localStorage.setItem("users", JSON.stringify(users));
         console.log(users)
-        window.location.href="./login.html" //this doesnt work for some reason?
+        window.location.href="./login.html"; //for some reason href method worsk but assign method does not
     }else {
         resultSpan.innerText ="You must accept Terms and Conditions to complete registration"
         return false
     }     
+
 }//close functions
