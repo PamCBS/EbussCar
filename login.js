@@ -17,29 +17,29 @@ loginButton.onclick = function(){
     //alert("You need to enter a username and password in order to use our platform.")
     return false;
   }
-  console.log("loaded1")
-  //a functionality that checks if the email address already exists
+  
+  //this functionality checks if the email address and email are registered in our system with the loop function
   for (let i=0; i<users.length; i++){
-    if(emailLoginInput.value === users[i].email){
+    if(emailLoginInput.value === users[i].email && passwordLoginInput.value===users[i].password){
+      localStorage.setItem("users", JSON.stringify(users));
+      console.log(
+        'here'
+      )
+      window.location.href="./driverWall.html";
     } else {
-      resultSpan.innerText ="Email address is not registered in our system."
-    }
-  }    	
-  console.log("loaded2")
-  //a functionality that checks if the input password is the same as registered password
-  for (let i=0; i<users.length; i++){
-    if (passwordLoginInput.value===users[i].password){
-      window.location.href="./driverWall.html"
-    } else{
-      resultSpan.innerText="Wrong password, try again."
+      resultSpan.innerText ="Email address and/or password is not registered in our system."
+      
     }
   }
-
+  //we are calling fucntion showPassword, which is written below, to make the password visible after checking the button
   showPassword()
 
-  if (rememberMe.checked){
-    e.preventDefault(); //to tell the browser not to refresh
-  }
+  //this is the last condition for login, which does nothing
+  //if (rememberMe.checked){
+  //e.preventDefault(); //to tell the browser not to refresh
+    //it's a little joke, we cannot remember users without a database
+  //}
+  return false;
 }
 function showPassword() {
     //this function allows User to see the password that he/she typed 
