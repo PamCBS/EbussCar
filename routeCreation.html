@@ -1,34 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create a new ride | EbussCar</title>
-</head>
-<body>
-    <!-- Navigation bar -->
-    <ul>
-        <li><a href="./About.html">About us</a></li>
-        <li><a href="./driverWall.html">Home</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-    </ul>
-        <!-- end of Navigation bar -->
+   <!-- comments in HTML look like this -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>Registration | EbussCar</title>
+   </head>
+   
+   <body>
+       <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
+       <h1>Create a new route</h1>
+       <form id="route-creation">
 
-    <h1>Here you can start creaing a new ride here.</h1>
-    <div><span>Locations</span></div>
-    <div><input type="submit" value="Valby" name="Valby-btn" id="Valby-btn"></div>
-    <div><input type="submit" value="Sydhavn" name="Sydhavn-btn" id="Sydhavn-btn"></div>
-    <div><input type="submit" value="Nørreport" name="Norreport-btn" id="Norreport-btn"></div>
-    <div><input type="submit" value="Amager" name="Amager-btn" id="Amager-btn"></div>
-    <div><input type="submit" value="Glostrup" name="Glostrup-btn" id="Glostrup-btn"></div>
-    <div><input type="submit" value="Ballerup" name="Ballerup-btn" id="Ballerup-btn"></div>
-    <div><input type="submit" value="Lyngby" name="Lyngby-btn" id="Lyngby-btn"></div>
-    <div><input type="submit" value="Hellerup" name="Hellerup-btn" id="Hellerup-btn"></div>
-    <div><span>Destinations:</span></div>
-    <div><input type="submit" value="Flintholm" name="Flintholm-btn" id="Flintholm-btn"></div>
-    <div><input type="submit" value="Solbjerg Plads" name="SP-btn" id="SP-btn"></div>
-    <div><input type="submit" value="Kilen" name="Kilen-btn" id="Kilen-btn"></div>
-    <div><input type="submit" value="Dalgas Have" name="DH-btn" id="DH-btn"></div>
-</body>
-</html>
+           <span id="loginResult">Please provide us with infomration about you.</span>
+        <div>
+            <p>Start Location </p><select id="start-location">
+                <option>Choose a starting location</option>
+                <option>Valby Station</option>
+                <option>Amagerbro Station</option>
+            </select>
+        </div>
+
+
+        <div>
+            <p>Destination </p><select id="end-location">
+                <option>Choose a campus destination</option>
+                <option>Solbjerg Plads</option>
+                <option>Flinthom</option>
+            </select>
+        </div>
+
+        <div><p>Date </p><input type="date" id="date"></div>
+
+        <div><p>Time </p><input type="time" id="time"></div>
+        
+        <div><p>Driver Mark-up </p><input type="number" id="driver-comission" placeholder="Please provide your desired mark-up" min="10" max="50">
+        </div>
+
+        <div><p>Available Seats </p><input type="number" id="driver-comission" placeholder="Please provide the number of seats you'd like to offer" min="1" max="4">
+        </div>
+
+        <div>
+                <p>Payment Method </p><select id="end-location">
+                    <option>Choose a desired payment method</option>
+                    <option>Card</option>
+                    <option>PayPal</option>
+                </select>
+            </div>        
+        <div><input type="button" value="Post" id="submit-btn"></div>
+
+
+       </form>
+   
+       <script src="./route.js"></script>
+       <script src ="./routeDatabase.js"></script>
+       <script src="./routeCreation.js"></script>
+   </body>
+   </html>
