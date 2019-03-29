@@ -4,17 +4,16 @@
 
 console.log("User.js loaded")
 class User{
-    constructor(firstName, lastName, username, email, DofB, password, repeatPassword){
+    constructor(firstName, lastName, username, email, DofB, password){
         //in the brackets we write it to specify order of input
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email= email;
         this.DofB= DofB;
-        this.password = password;
-        this.repeatPassword=repeatPassword
-        // we didn't create a checkbox constructor to minimize coding. If user didn't check it, he would't create account
+        this.password = password;        
     }
+    
     hashPassword(rawPassword){//function copy pasted from Jan, I asked and he said it's fine if we get his code.
         var a = 1, c = 0, h, o;
         if (rawPassword) {
