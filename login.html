@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login | EbussCar</title>
 </head>
+
 <body>
     <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
     <h1>Login page</h1>
     <form id="login-form">
-        <span id=resultSpan>Please provide with your login information</span>
-        <div><span>Email:</span><input type="email" name="login-email" id="login-email" placeholder="Enter your CBS email"></div>    
-        <div><span>Password:</span><input type="password" name="login-password" id="login-password" placeholder="Enter your password">
-        <input type="checkbox" onclick="showPassword()"><span>Show Password </span></div><!-- a functionality to see the password after typing to make sure there are no typos -->
-        <div><span>Forgot password? </span><a href="#">Reset your password</a></div>
-        <button type="submit" id="login-btn">Login</button>
-        <input type="checkbox" checked="checked" name="remember" id="remember-me"> <span>Remember me</span><!-- We cannot use this fucntionality because we do not have a database to storage data and we do not know how to make cookies but we will elaborate on that in the raport -->
+        <p id=resultSpan>Please provide with your login information</p>
+        <p>Email:</p><input type="email" name="login-email" id="login-email" placeholder="Enter your CBS email">
+        <p>Password:</p>
+        <p></p><input type="password" name="login-password" id="login-password" placeholder="Enter your password">
+        <input type="checkbox" onclick="showPassword()">Show Password </p>
+        <!-- a functionality to see the password after typing to make sure there are no typos -->
+        <p>Forgot password? <a href="#">Reset your password</a></p>
+        <p><button type="submit" id="login-btn">Login</button>
+            <input type="checkbox" checked="checked" name="remember" id="remember-me"> Remember me</p>
+        <!-- We cannot use this fucntionality because we do not have a database to storage data and we do not know how to make cookies but we will elaborate on that in the raport -->
     </form>
 
-    <!-- displays logout button, only when logged in-->
-    
-    <div>If you do not have an account, register <a href="./register.html">here</a>.</div>
+    If you do not have an account, register <a href="./register.html">here</a>.
 
-<script src="./login.js"></script>
-<script src="./user.js"></script>
-<script src="./userDatabase.js"></script>
+    <script src="./login.js"></script>
+    <script src="./user.js"></script>
+    <script src="./userDatabase.js"></script>
 
 </body>
+
 </html>
