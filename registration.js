@@ -14,7 +14,7 @@ const DofBInput = document.getElementById("date-of-birth")
 const passwordInput = document.getElementById("password")
 const repeatPasswordInput = document.getElementById("repeat-password")
 const termsInput = document.getElementById("terms")
-const resultSpan = document.getElementById('loginResult');
+var resultSpan = document.getElementById('signinResult');
 
 
 
