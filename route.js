@@ -6,7 +6,7 @@ console.log("Route.js loaded")
 
 
 class Route{
-    constructor(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats){
+    constructor(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, paymentMethod, seats){
         //in the brackets we write it to specify order of input
         this.startLocation = startLocation;
         this.endLocation = endLocation;
@@ -15,6 +15,7 @@ class Route{
         this.driverComission = driverComission;
         this.basePrice = basePrice;
         this.finalPrice = finalPrice;
+        this.paymentMethod = paymentMethod
         this.seats = seats;
 
     }
