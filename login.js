@@ -1,7 +1,7 @@
 //by using const, we have variables with global scope.
 const emailLoginInput = document.getElementById("login-email");
 const passwordLoginInput = document.getElementById("login-password");
-const resultSpan = document.getElementById("resultSpan");
+var resultSpan = document.getElementById("resultSpan");
 const loginButton = document.getElementById("login-btn");
 const rememberMe = document.getElementById("remember-me");
 const logoutButton = document.getElementById("logout-btn");
@@ -14,9 +14,7 @@ console.log(`Is logged in? ${isLoggedIn}`); //to check if the variable reflects 
 // stringify isLoggedIn and put into localStorage
 var isLoggedInStringified = JSON.stringify(isLoggedIn);//local scope, as the variable's value changes accordingly to situation
 localStorage.setItem('isLoggedIn', isLoggedInStringified);//setItem(key, value) value can only be a string
-console.log(isLoggedInStringified)
-//making sure the logout button is hidden, when user isn't logged in (changed to visible after logging in)
-logoutButton.style.visibility = 'hidden';
+
 
 loginButton.onclick = function () {
   console.log("loaded0")//debugger
@@ -28,9 +26,10 @@ loginButton.onclick = function () {
 
   //this functionality checks if the email address and email are registered in our system with the loop function
   for (let i = 0; i < users.length; i++) {
+    console.log("loaded1")
     try {//simple explanation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
       // We try to create a variable with the hashed version of the inputPassword
-      var hashedInputPassword = users[i].hashPassword(passwordLoginInput.value);//we hash password here so we still are able to access its value and compare it with input value
+      var hashedInputPassword = users[i].hashPassword(passwordLoginInput.value);//we hash password here, after it is saved in system, so we still are able to access its value and compare it with input value
     } catch (error) {
       // We console log any error that might have been thrown
       console.log(error);
@@ -39,7 +38,7 @@ loginButton.onclick = function () {
     if (emailLoginInput.value === users[i].email && hashedInputPassword === users[i].password) {
       localStorage.setItem("users", JSON.stringify(users));
       console.log('here')
-      logoutButton.style.visibility = 'visible'; // show logout button
+      //transferring the status of logged in to a variable:
       isLoggedIn = true
       isLoggedInStringified = JSON.stringify(isLoggedIn);
       localStorage.setItem("isLoggedIn", isLoggedInStringified);
