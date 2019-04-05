@@ -1,60 +1,79 @@
-   <!-- comments in HTML look like this -->
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-       <title>Registration | EbussCar</title>
-   </head>
-   
-   <body>
-       <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
-       <h1>Create a new route</h1>
-       <form id="route-creation">
+<!-- comments in HTML look like this -->
+<!DOCTYPE html>
+<html lang="en">
 
-           <span id="loginResult">Please provide us with infomration about you.</span>
-        <div>
-            <p>Start Location </p><select id="start-location">
-                <option>Choose a starting location</option>
-                <option>Valby Station</option>
-                <option>Amagerbro Station</option>
-            </select>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Route Creation | EbussCar</title>
+</head> 
 
+<body onload="hideFinalPrice ()">
+    <div id="wrap">
+        <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
+        <h1>Create a new route</h1>
+        <form id="route-creation">
+            <fieldset>
+                <legend> Route Creation </legend>
 
-        <div>
-            <p>Destination </p><select id="end-location">
-                <option>Choose a campus destination</option>
-                <option>Solbjerg Plads</option>
-                <option>Flinthom</option>
-            </select>
-        </div>
-
-        <div><p>Date </p><input type="date" id="date"></div>
-
-        <div><p>Time </p><input type="time" id="time"></div>
-        
-        <div><p>Driver Mark-up </p><input type="number" id="driver-comission" placeholder="Please provide your desired mark-up" min="10" max="50">
-        </div>
-
-        <div><p>Available Seats </p><input type="number" id="driver-comission" placeholder="Please provide the number of seats you'd like to offer" min="1" max="4">
-        </div>
-
-        <div>
-                <p>Payment Method </p><select id="end-location">
-                    <option>Choose a desired payment method</option>
-                    <option>Card</option>
-                    <option>PayPal</option>
-                </select>
-            </div>        
-        <div><input type="button" value="Post" id="submit-btn"></div>
+                <div>
+                    <p>Start Location <select id="start-location" onchange="calcFinalPrice()">
+                            <option>Choose a starting location</option>
+                            <option>Valby Station</option>
+                            <option>Amagerbro Station</option>
+                    </p>
+                    </select>
+                </div>
 
 
-       </form>
-   
-       <script src="./route.js"></script>
-       <script src ="./routeDatabase.js"></script>
-       <script src="./routeCreation.js"></script>
-   </body>
-   </html>
+                <div>
+                    <p>Destination <select id="end-location" onchange="calcFinalPrice()">
+                            <option>Choose a campus destination</option>
+                            <option>Solbjerg Plads</option>
+                            <option>Flintholm</option>
+                    </p>
+                    </select>
+                </div>
+
+                <div>
+                    <p>Date <input type="date" id="date" />
+                </div>
+                </p>
+
+                <div>
+                    <p>Time <input type="time" id="time">
+                </div>
+                </p>
+
+                <div>
+                    <p>Driver Mark-up <input type="text" id="driver-comission" placeholder="Your mark-up" onchange="calcFinalPrice ()">
+                    </p>
+                </div>
+
+                <div>
+                    <p>Available Seats <input type="number" id="seats"
+                            placeholder="Please provide the number of seats you'd like to offer" min="1" max="4">
+                    </p>
+                </div>
+                <div>
+                    <p>PayPal <input type="text" id="paypal" placeholder="Provide your PayPal ID or email"></p>
+                </div>
+
+                <div id="finalPrice"></div>
+
+                <div>
+                    <p><input type="button" value="Post" id="post-btn"></p>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="./routeCreation.js"></script>
+    <script src="./route.js"></script>
+    <script src="./routesDatabase.js"></script>
+
+</body>
+
+</html>
