@@ -28,8 +28,11 @@ loginButton.onclick = function () {
   for (let i = 0; i < users.length; i++) {
     console.log("loaded1")
     try {//simple explanation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
-      // We try to create a variable with the hashed version of the inputPassword
-      var hashedInputPassword = users[i].hashPassword(passwordLoginInput.value);//we hash password here, after it is saved in system, so we still are able to access its value and compare it with input value
+      // We try to create a variable with the hashed version of the inputPassword 
+      //That is, we want the try block to succeed, and if it does not succeed, we want to pass control to the catch block. 
+      //If no exception is thrown in the try block, the catch clause is skipped.
+      var hashedInputPassword = users[i].hashPassword(passwordLoginInput.value);
+      //we hash password here, after it is saved in system, so we still are able to access its value and compare it with input value
     } catch (error) {
       // We console log any error that might have been thrown
       console.log(error);
