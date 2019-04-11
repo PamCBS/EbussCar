@@ -7,7 +7,7 @@ const dateInput = document.getElementById("date");
 const timeInput = document.getElementById('time');
 const driverComissionInput = document.getElementById('driver-comission');
 const seatsInput = document.getElementById('seats');
-const payPal = document.getElementById('paypal')
+const payPalInput = document.getElementById('paypal')
 const resultSpan = document.getElementById('route-creation');
 const routeCreation = document.forms["route-creation"];
 const driverComission = routeCreation.elements["driver-comission"];
@@ -68,12 +68,10 @@ function hideFinalPrice()
 }
 
 
-
-
 postButton.onclick = function postRoute () {
     console.log("print")
 
-    if (startLocationInput.value !== undefined && endLocationInput.value !== undefined, dateInput.value !== undefined, driverComissionInput.value !== undefined, seatsInput.value !== undefined, paypalInput.value !== undefined) {
+    if (startLocationInput.value !== undefined && endLocationInput.value !== undefined, dateInput.value !== undefined, driverComissionInput.value !== undefined, seatsInput.value !== undefined, payPalInput.value !== undefined) {
         var startLocation = startLocationInput.value
         var endLocation = endLocationInput.value
         var date = dateInput.value
@@ -82,19 +80,17 @@ postButton.onclick = function postRoute () {
         var basePrice = calcBasePrice()
         var finalPrice = calcFinalPrice()
         var seats = seatsInput.value
-        var paypal = paypalInput.value
+        var payPal = payPalInput.value
 
-        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, paypal))
+        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal))
         localStorage.setItem("routes", JSON.stringify(routes));
         console.log(routes)
-        window.location.href = "./availableRoutes.html"
+        window.location.href = "./driverWall.html"
     } else {
         displaySpan.innerText = "You must fill out all fields"
         return false
     }
 }
-
-
 
 //logout function:
 const logoutButton = document.getElementById("logout-btn");
@@ -109,4 +105,3 @@ logoutButton.onclick = function LogOut() {
         window.location.href = "./login.html"
     }
 }
-
