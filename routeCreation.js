@@ -68,8 +68,45 @@ function hideFinalPrice()
 }
 
 
-postButton.onclick = function(){
-    console.log("postButton works")
 
 
+postButton.onclick = function postRoute () {
+    console.log("print")
+
+    if (startLocationInput.value !== undefined && endLocationInput.value !== undefined, dateInput.value !== undefined, driverComissionInput.value !== undefined, seatsInput.value !== undefined, paypalInput.value !== undefined) {
+        var startLocation = startLocationInput.value
+        var endLocation = endLocationInput.value
+        var date = dateInput.value
+        var time = timeInput.value
+        var driverComission = driverComissionInput.value
+        var basePrice = calcBasePrice()
+        var finalPrice = calcFinalPrice()
+        var seats = seatsInput.value
+        var paypal = paypalInput.value
+
+        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, paypal))
+        localStorage.setItem("routes", JSON.stringify(routes));
+        console.log(routes)
+        window.location.href = "./availableRoutes.html"
+    } else {
+        displaySpan.innerText = "You must fill out all fields"
+        return false
+    }
 }
+
+
+
+//logout function:
+const logoutButton = document.getElementById("logout-btn");
+var isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"))//
+console.log(`Is user logged in? ${isLoggedIn}`)
+logoutButton.onclick = function LogOut() {
+    if (isLoggedIn === true) {
+        isLoggedIn = false;
+        localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn)); // update local storage to logged out with setItem(key, value) value has to be string
+        logoutButton.style.visibility = 'hidden';//after we log out, we do not want to see the log out button anymore
+        console.log(`Is logged in?${isLoggedIn}`);//updating the status
+        window.location.href = "./login.html"
+    }
+}
+
