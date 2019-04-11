@@ -12,7 +12,7 @@ const resultSpan = document.getElementById('route-creation');
 const routeCreation = document.forms["route-creation"];
 const driverComission = routeCreation.elements["driver-comission"];
 const divFinalPrice = document.getElementById('finalPrice');
-
+const displaySpan = document.getElementById("display");
 
 //this is debugging tip
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -20,9 +20,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-
 //let basePrice = calcBasePrice()
 //let finalPrice = calcFinalPrice();
+
+function getOwner(){
+    return localStorage.getItem("emailLoginInput.value");
+}
 
 
 function calcBasePrice() {
@@ -72,6 +75,7 @@ postButton.onclick = function postRoute () {
     console.log("print")
 
     if (startLocationInput.value !== undefined && endLocationInput.value !== undefined, dateInput.value !== undefined, driverComissionInput.value !== undefined, seatsInput.value !== undefined, payPalInput.value !== undefined) {
+        
         var startLocation = startLocationInput.value
         var endLocation = endLocationInput.value
         var date = dateInput.value
@@ -81,8 +85,9 @@ postButton.onclick = function postRoute () {
         var finalPrice = calcFinalPrice()
         var seats = seatsInput.value
         var payPal = payPalInput.value
+        var owner = getOwner()
 
-        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal))
+        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal, owner))
         localStorage.setItem("routes", JSON.stringify(routes));
         console.log(routes)
         window.location.href = "./driverWall.html"
