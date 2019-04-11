@@ -12,18 +12,20 @@
     <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
     <h1>Create a new User</h1>
     <form id="registartion-form">
-        <p id="signinResult">Please provide us with infomration about you.</p>
-        <p>First Name: <input type="text" id="first-name" placeholder="Provide your first name"></p>
-        <p>Last Name: <input type="text" id="last-name" placeholder="Provide your last name"></p>
-        <p>Username: <input type="text" id="username" placeholder="Choose a username"></p>
-        <p>Email: <input type="email" id="email" placeholder="Please provide your CBS student email"></p>
-        <p>Date Of Birth: <input type="date" id="date-of-birth" min="1960-01-01" max="2002-01-01"></p>
-        <p>Password: <input type="password" id="password" placeholder="Select a password"></p>
-        <p>Repeat password: <input type="password" id="repeat-password" placeholder="Repeat the password"></p>
-        <p><input type="checkbox" id="terms">I agree to the <a href="#">Terms and Conditions</a></p>
-        <input type="reset" value="Reset"> <input type="button" value="Complete registration" id="submit-btn">
-        <p>Already have an account? <a href="./login.html">Log In</a></p>
-        
+        <fieldset>
+        <legend>Registration form</legend>
+            <p id="signinResult">Please provide us with infomration about you.</p>
+            <p>First Name: <input type="text" id="first-name" placeholder="Provide your first name"></p>
+            <p>Last Name: <input type="text" id="last-name" placeholder="Provide your last name"></p>
+            <p>Username: <input type="text" id="username" placeholder="Choose a username"></p>
+            <p>Email: <input type="email" id="email" placeholder="Please provide your CBS student email"></p>
+            <p>Date Of Birth: <input type="date" id="date-of-birth" min="1960-01-01" max="2002-01-01"></p>
+            <p>Password: <input type="password" id="password" placeholder="Select a password"></p>
+            <p>Repeat password: <input type="password" id="repeat-password" placeholder="Repeat the password"></p>
+            <p><input type="checkbox" id="terms">I agree to the <a href="#">Terms and Conditions</a></p>
+            <input type="reset" value="Reset"> <input type="button" value="Complete registration" id="submit-btn">
+            <p>Already have an account? <a href="./login.html">Log In</a></p>
+        </fieldset>
     </form>
 
     <script src="./user.js"></script>
