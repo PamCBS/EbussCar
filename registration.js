@@ -1,6 +1,5 @@
 
-console.log("registration.js loaded")
-//this is debugging tip
+console.log("registration.js loaded")//this is debugging tip
 
 // Bind the two input fields and get the value. By using const we make the scope of the variables global
 const submitButton = document.getElementById('submit-btn')
@@ -15,8 +14,6 @@ const passwordInput = document.getElementById("password")
 const repeatPasswordInput = document.getElementById("repeat-password")
 const termsInput = document.getElementById("terms")
 var resultSpan = document.getElementById('signinResult');
-
-
 
 console.log(users)
 //just to check that we have at least one registered user (hardcoded)
