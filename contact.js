@@ -1,10 +1,9 @@
-const logoutButton = document.getElementById("logout-btn");
 const feedback= document.getElementById("feedback")
 
 var feedbackMessage=feedback.value
 localStorage.setItem("feedbackMessage", feedbackMessage) //setItem(key, value)
 
-
+const logoutButton = document.getElementById("logout-btn");
 var isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"))//
 console.log(`Is user logged in? ${isLoggedIn}`)
 logoutButton.onclick = function LogOut(){
