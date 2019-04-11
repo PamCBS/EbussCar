@@ -12,7 +12,7 @@ if (localStorage.getItem("routes") === null) {
 } else {
     routes = JSON.parse(localStorage.getItem("routes"));
     for (let i = 0; i < routes.length; i++) {
-        route[i] = new Route(route[i].startLocation, route[i].endLocation, route[i].date, route[i].time, route[i].driverComission, route[i].basePrice, route[i].finalPrice, route[i].seats, route[i].payPal);
+        routes[i] = new Route(routes[i].startLocation, routes[i].endLocation, routes[i].date, routes[i].time, routes[i].driverComission, routes[i].basePrice, routes[i].finalPrice, routes[i].seats, routes[i].payPal);
     }
 }
 
