@@ -8,7 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Route Creation | EbussCar</title>
 </head> 
-
+    <!-- Navigation bar -->
+    <ul>
+        <li><a href="./About.html">About us</a></li>
+        <li><a href="./driverWall.html">Home</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><input type=button id="logout-btn" value="Log out"></li>
+    </ul>
+    <!-- end of Navigation bar -->
 <body onload="hideFinalPrice ()">
     <div id="wrap">
         <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
@@ -16,7 +23,7 @@
         <form id="route-creation">
             <fieldset>
                 <legend> Route Creation </legend>
-
+                <p id="display">Please provide with the route information</p>
                 <div>
                     <p>Start Location <select id="start-location" onchange="calcFinalPrice()">
                             <option>Choose a starting location</option>
