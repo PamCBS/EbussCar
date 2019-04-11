@@ -1,28 +1,28 @@
 console.log("routeCreation.js loaded")
 
-var postButton;
-var startLocationInput;
-var endLocationInput;
-var dateInput;
-var timeInput;
-var driverComissionInput;
-var seatsInput;
-var payPal;
-var resultSpan;
+const postButton = document.getElementById('post-btn');
+const startLocationInput = document.getElementById('start-location');
+const endLocationInput = document.getElementById('end-location');
+const dateInput = document.getElementById("date");
+const timeInput = document.getElementById('time');
+const driverComissionInput = document.getElementById('driver-comission');
+const seatsInput = document.getElementById('seats');
+const payPal = document.getElementById('paypal')
+const resultSpan = document.getElementById('route-creation');
+const routeCreation = document.forms["route-creation"];
+const driverComission = routeCreation.elements["driver-comission"];
+const divFinalPrice = document.getElementById('finalPrice');
+
+
 //this is debugging tip
 window.addEventListener('DOMContentLoaded', (event) => {
     date.min = new Date().toISOString().split("T")[0];
-
-
 });
 
 
 
 //let basePrice = calcBasePrice()
 //let finalPrice = calcFinalPrice();
-
-
-//console.log(routes)
 
 
 function calcBasePrice() {
@@ -46,8 +46,7 @@ function calcBasePrice() {
 }
 
 function calcDriverComissionInput() {
-    var routeCreation = document.forms["route-creation"];
-    var driverComission = routeCreation.elements["driver-comission"];
+
     var howMuch = 0;
     if (driverComission.value != "") {
         howMuch = parseInt(driverComission.value);
@@ -58,9 +57,8 @@ function calcDriverComissionInput() {
 function calcFinalPrice() {
     console.log('called')
     var finalPrice = calcBasePrice() + calcDriverComissionInput();
-    var divFinalPrice = document.getElementById('finalPrice');
     divFinalPrice.style.display = 'block';
-    divFinalPrice.innerHTML = "Route total price is DKK" + finalPrice;
+    divFinalPrice.innerHTML = "Route total price is " + finalPrice + " DKK";
 }
 
 function hideFinalPrice()
@@ -69,17 +67,9 @@ function hideFinalPrice()
     divFinalPrice.style.display='none';
 }
 
-var test = () => {
-    console.log('clicked')
-}
 
-    // Bind the two input fields and get the value. By using var we make the scope of the variables global
-    postButton = document.getElementById('post-btn');
-    startLocationInput = document.getElementById('start-location');
-    endLocationInput = document.getElementById('end-location');
-     dateInput = document.getElementById("date");
-    timeInput = document.getElementById('time');
-    driverComissionInput = document.getElementById('driverComission');
-    seatsInput = document.getElementById('seats');
-    payPal = document.getElementById('payal')
-    resultSpan = document.getElementById('route-creation');
+postButton.onclick = function(){
+    console.log("postButton works")
+
+
+}
