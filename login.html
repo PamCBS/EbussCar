@@ -12,20 +12,22 @@
     <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
     <h1>Login page</h1>
     <form id="login-form">
-        <p id=resultSpan>Please provide with your login information</p>
-        <p>Email:</p><input type="email" name="login-email" id="login-email" placeholder="Enter your CBS email">
-        <p>Password:</p>
-        <p></p><input type="password" name="login-password" id="login-password" placeholder="Enter your password">
-        <input type="checkbox" onclick="showPassword()">Show Password </p>
-        <!-- a functionality to see the password after typing to make sure there are no typos -->
-        <p>Forgot password? <a href="#">Reset your password</a></p>
-        <p><button type="submit" id="login-btn">Login</button>
-            <input type="checkbox" checked="checked" name="remember" id="remember-me"> Remember me</p>
-        <!-- We cannot use this fucntionality because we do not have a database to storage data and we do not know how to make cookies but we will elaborate on that in the raport -->
+        <fieldset>
+        <legend>Login form</legend>
+            <p id="resultSpan">Please provide with your login information</p>
+            <p>Email: <input type="email" name="login-email" id="login-email" placeholder="Enter your CBS email">
+            <p>Password: <input type="password" name="login-password" id="login-password" placeholder="Enter your password">
+            <input type="checkbox" onclick="showPassword()">Show Password </p>
+            <!-- a functionality to see the password after typing to make sure there are no typos -->
+            <p>Forgot password? <a href="#">Reset your password</a></p>
+            <p><button type="submit" id="login-btn">Login</button>
+                <input type="checkbox" checked="checked" name="remember" id="remember-me"> Remember me</p>
+            <!-- We cannot use this fucntionality because we do not have a database to storage data and we do not know how to make cookies but we will elaborate on that in the raport -->
+            If you do not have an account, register <a href="./register.html">here</a>.
+        </fieldset>
     </form>
 
-    If you do not have an account, register <a href="./register.html">here</a>.
-
+    
     <script src="./login.js"></script>
     <script src="./user.js"></script>
     <script src="./userDatabase.js"></script>
