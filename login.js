@@ -45,6 +45,9 @@ loginButton.onclick = function () {
       isLoggedIn = true
       isLoggedInStringified = JSON.stringify(isLoggedIn);
       localStorage.setItem("isLoggedIn", isLoggedInStringified);
+      //saving email to localStorage to have an owner of a ride
+      localStorage.setItem("emailLoginInput.value", JSON.stringify(emailLoginInput.value))
+
       window.location.href = "./driverWall.html";
 
     } else {
