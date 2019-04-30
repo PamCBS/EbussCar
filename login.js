@@ -49,6 +49,7 @@ loginButton.onclick = function () {
       localStorage.setItem("emailLoginInput.value", JSON.stringify(emailLoginInput.value))
 
       window.location.href = "./driverWall.html";
+      window.location.href = "./userinterface.html";
 
     } else {
       resultSpan.innerText = "Email address and/or password is not registered in our system."
