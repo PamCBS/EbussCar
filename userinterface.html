@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My profile | EbussCar</title>
+</head> 
+<style></style>
+<body>
+    <!-- Navigation bar -->
+    <ul>
+        <li><a href="./About.html">About us</a></li>
+        <li><a href="./userinterface.html">Home</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><input type=button id="logout-btn" value="Log out"></li>
+    </ul>
+    <!-- end of Navigation bar -->
+
+    <h1>My profile</h1>
+    <form id="my-profile">
+        <fieldset>
+            <legend>Details</legend>
+            <p>
+                <div>
+                <label>Name: </label>
+                <span class="attribute_value">
+                    <span for="firstName" data-input-class="required-entry validate-no-html-tags"></span>
+                    <span for="lastName" data-input-class="required-entry validate-no-html-tags"></span>
+                </span>
+                </div>
+            </p>
+
+            <p>
+                <div>
+                <label>Username: </label>
+                <span class="attribute_value">
+                    <span for="username" data-input-class="required-entry validate-no-html-tags"></span>
+                </span>
+                </div>
+            </p>
+
+            <p>
+                <div>
+                <label>E-mail: </label>
+                <span class="attribute_value">
+                    <span for="email" data-input-class="required-entry validate-no-html-tags"></span>
+                </span>
+                </div>
+            </p>
+
+            <p>
+                <div>
+                <label>Date of birth: </label>
+                <span class="attribute_value">
+                    <span for="DofB" data-input-class="required-entry validate-no-html-tags"></span>
+                </span>
+                </div>
+            </p>
+
+            <p>
+                    <div>
+                    <label>Number of rides offered until now: </label>
+                    <span class="attribute_value">
+                        <span for="DofB" data-input-class="required-entry validate-no-html-tags"></span>
+                    </span>
+                    </div>
+                </p>
+
+            <p>Create a new <a href="./routeCreation.html" >route.</a></p>
+
+        </fieldset>
+    </form>
+
+    <script src="./login.js"></script>
+    <script src="./user.js"></script>
+    <script src="./userDatabase.js"></script>
+
+</body>
+</html>
