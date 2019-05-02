@@ -72,9 +72,8 @@ function hideFinalPrice()
 
 
 postButton.onclick = function postRoute () {
-    console.log("print")
-
-    if (startLocationInput.value !== undefined && endLocationInput.value !== undefined, dateInput.value !== undefined, driverComissionInput.value !== undefined, seatsInput.value !== undefined, payPalInput.value !== undefined) {
+    
+    if (startLocationInput.value === 0 || endLocationInput.value === 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
         
         var startLocation = startLocationInput.value
         var endLocation = endLocationInput.value
