@@ -1,19 +1,32 @@
+const divName = document.getElementById("profile-name");
+const divUsername = document.getElementById("profile-username");
+const divEmail = document.getElementById("profile-email");
+const divNoR = document.getElementById("profile-NofR");
+
+// get active user from ls
+// get all users from ls
+// loop over all users and find the currentUser
+var activeUser = JSON.parse(localStorage.getItem("activeUser"))
+var allUsersLS = JSON.parse(localStorage.getItem("users"))
+
+// Create a function to find a product/item based on it's ID
+// The function should take both the array and ID as inputs
+
+function findCurrent (){
+    console.log("function findCurent is called1")//to make sure it event works
+    const currentUser = allUsersLS.find((users) => {
+        return users.email === activeUser
+    })
+    
+    divName.innerHTML = 'Name: ' + currentUser.firstName;
+    divUsername.innerText = 'Username: ' + currentUser.username;
+    divEmail.innerHTML = "Email:" + currentUser.email;
+    divNoR.innerText = 'Number of rides: ' + curentUser.NoR
+}
+
+
+//log out function
 const logoutButton = document.getElementById("logout-btn");
-const profileName = document.getElementById("profile-name");
-const profileUsername = document.getElementById("profile-username")
-const profileEmail=document.getElementById("profile-email")
-const profileDateofbirth=document.getElementById("profile-dateofbirth")
-const profileNofR=document.getElementById("profile-NofR")
-
-userLS = JSON.parse(localStorage.getItem("users"))
-
-
-
-
-
-
-
-
 
 var isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"))//
 console.log(`Is user logged in? ${isLoggedIn}`)
@@ -27,5 +40,3 @@ logoutButton.onclick = function LogOut(){
         window.location.href="./login.html"
     }
 }
-//function display(user){
-    //var 
