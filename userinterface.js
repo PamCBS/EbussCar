@@ -1,3 +1,5 @@
+console.log("Userinterface.js is connected")
+
 const divName = document.getElementById("profile-name");
 const divUsername = document.getElementById("profile-username");
 const divEmail = document.getElementById("profile-email");
@@ -6,24 +8,34 @@ const divNoR = document.getElementById("profile-NofR");
 // get active user from ls
 // get all users from ls
 // loop over all users and find the currentUser
-var activeUser = JSON.parse(localStorage.getItem("activeUser"))
-var allUsersLS = JSON.parse(localStorage.getItem("users"))
+const activeUser = JSON.parse(localStorage.getItem("activeUser"))
+const allUsersLS = JSON.parse(localStorage.getItem("users"))
+const allRidesLS = JSON.parse(localStorage.getItem("routes"))
 
-// Create a function to find a product/item based on it's ID
-// The function should take both the array and ID as inputs
 
-function findCurrent (){
+// Create a function to find a ride based on it's owner email
+
+const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works
     const currentUser = allUsersLS.find((users) => {
         return users.email === activeUser
     })
     
     divName.innerHTML = 'Name: ' + currentUser.firstName;
-    divUsername.innerText = 'Username: ' + currentUser.username;
-    divEmail.innerHTML = "Email:" + currentUser.email;
-    divNoR.innerText = 'Number of rides: ' + curentUser.NoR
+    divUsername.innerHTML = 'Username: ' + currentUser.username;
+    divEmail.innerHTML = "Email: " + currentUser.email;
+    divNoR.innerHTML = 'Number of rides offered so far: ' + currentUser.NoR
+    //InnerText will only return the text value of the page with each element on a newline in plain text, 
+    //while innerHTML will return the HTML content of everything inside the body tag,
 }
+findCurrent()
 
+if (users.email === activeUser){
+    for(let counter = 0; counter < allRidesLS.length; counter++){
+        counter ++;
+        divNoR = counter;
+        }
+    }
 
 //log out function
 const logoutButton = document.getElementById("logout-btn");
