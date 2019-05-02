@@ -23,8 +23,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //let basePrice = calcBasePrice()
 //let finalPrice = calcFinalPrice();
 
-function getOwner(){
-    return localStorage.getItem("emailLoginInput.value");
+const activeUser = JSON.parse(localStorage.getItem("activeUser"))
+const allUsersLS = JSON.parse(localStorage.getItem("users"))
+
+// Create a function to find a ride based on it's owner email
+
+const findCurrent = () => {
+    console.log("function findCurent is called1")//to make sure it event works
+    const currentUser = allUsersLS.find((users) => {
+        return users.email === activeUser
+    })
+    return currentUser
 }
 
 
@@ -84,10 +93,12 @@ postButton.onclick = function postRoute () {
         var finalPrice = calcFinalPrice()
         var seats = seatsInput.value
         var payPal = payPalInput.value
-        var owner = getOwner()
+        var owner = JSON.parse(localStorage.getItem("activeUser"))
 
         routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal, owner))
         localStorage.setItem("routes", JSON.stringify(routes));
+        //let currentRide = route[i]
+        //localStorage.setItem("currentRoute", JSON.stringify(currentRide));
         console.log(routes)
         window.location.href = "./driverWall.html"
     } else {
