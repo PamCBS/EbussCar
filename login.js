@@ -42,6 +42,8 @@ loginButton.onclick = function () {
       localStorage.setItem("users", JSON.stringify(users));
       console.log('here')
       //transferring the status of logged in to a variable:
+      let activeUser = emailLoginInput.value//to detect who is currently logging in to display his/her profile info
+      localStorage.setItem("activeUser", JSON.stringify(activeUser));//pushing the info to LS to retrieve it in Profile.
       isLoggedIn = true
       isLoggedInStringified = JSON.stringify(isLoggedIn);
       localStorage.setItem("isLoggedIn", isLoggedInStringified);
