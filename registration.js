@@ -35,6 +35,15 @@ submitButton.onclick = function () {
         return false
     }
 
+    // check if the email address is already stored in local storage
+    //we need to make sure that email is unique because we will assign the created value to a given user by email identification
+    for (let i = 0; i < users.length; i++) {
+        if (emailInput.value === users[i].email) {
+            resultSpan.innerText = "The email has already been used, try to log in"
+            return false
+        };
+    };
+
     // checking for conditions that password must meet
     //We already checked if there is any password entered but now we check if the password has at least 8 characters
     if (passwordInput.value.length <= 7) {
@@ -49,15 +58,6 @@ submitButton.onclick = function () {
         repeatPasswordInput.value = ""
         resultSpan.innerText = "Your password does not match. Please try again."
         return false
-    };
-
-
-    // check if the email address is already stored in local storage
-    for (let i = 0; i < users.length; i++) {
-        if (emailInput.value === users[i].email) {
-            resultSpan.innerText = "The email has already been used, try to log in"
-            return false
-        };
     };
 
     if (termsInput.checked) {
