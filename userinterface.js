@@ -2,7 +2,8 @@ const logoutButton = document.getElementById("logout-btn");
 const profileName = document.getElementById("profile-name");
 const profileUsername = document.getElementById("profile-username")
 
-userName = JSON.parse(localStorage.getItem("users"))
+userLS = JSON.parse(localStorage.getItem("users"))
+
 
 
 
