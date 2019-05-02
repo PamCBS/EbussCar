@@ -13,3 +13,5 @@ logoutButton.onclick = function LogOut(){
         window.location.href="./login.html"
     }
 }
+//function display(user){
+    //var 
