@@ -32,6 +32,7 @@ const findCurrent = () => {
 }
 findCurrent()
 
+//count of how many rides the user has offered:
 if (users.email === activeUser) {
     for (let counter = 0; counter < allRidesLS.length; counter++) {
         divNoR = counter;
@@ -39,18 +40,24 @@ if (users.email === activeUser) {
 }
 
 deleteButton.onclick = function () {
+    findCurrent()
     console.log("delete button works")
-    confirm(`Hi ${divName}, are you sure you want to delete your account?`)
+    var okButton = confirm(`Hi ${divName}, are you sure you want to delete your account?`)
     // the confirmation popup https://www.w3schools.com/jsref/met_win_confirm.asp
-    if (confirm == true) {
-        let indexcurrent = users.indexOf(currentUser)//syntax arr.indexOf(searchElement[, fromIndex])
-        if (indexcurrent > -1) {
-            users.splice(indexcurrent, 1);
+    if (okButton == true) {
+        console.log("if stat works too")
+        currentUser = allUsersLS.find((users) => {//to get access to currentUser variable again
+            return users.email === activeUser//for some reason it doesnt work
+        })
+        let indexcurrent = users.indexOf(currentUser);//syntax arr.indexOf(searchElement[, fromIndex])
+   //     if (indexcurrent > -1) {
+            users.splice(indexcurrent, 1); // syntax var a = array.splice(start, deleteCount)
+            //should i initiate users array here as well?
             window.location.href = "./registration.html";
             return true
-        }
+    //    }
     } else {
-        resultSpan.innerHTML = "Thank you for staying with us"
+        resultSpan.innerHTML = "Thank you for staying with us."
         return false
     }
 }
