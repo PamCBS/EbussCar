@@ -3,7 +3,7 @@
 //for every class that you create, build a individual JS.
 
 console.log("User.js loaded")
-class User{
+class User{//class is a special function that has cleaner and more elegant syntax. Constructor is DEFINED inside of it
     constructor(firstName, lastName, username, email, DofB, password){
         //in the brackets we write it to specify order of input
         this.firstName = firstName;
