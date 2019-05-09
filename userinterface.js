@@ -32,18 +32,18 @@ const displayInfoCurrent = () => {
 
     let currentUser = findCurrent()
     
-        let counter = 0
-        for (let i = 0; i < allRidesLS.length; i++) {
-            if (allRidesLS[i].owner.toLowerCase().includes(activeUser.toLowerCase())) {
-                counter++
-            }
-        }
+        // let counter = 0
+        // for (let i = 0; i < allRidesLS.length; i++) {
+        //     if (allRidesLS[i].owner.toLowerCase().includes(activeUser.toLowerCase())) {
+        //         counter++
+        //     }
+        // }
       
-    
+        console.log("play")
     divName.innerHTML = 'Name: ' + currentUser.firstName;
     divUsername.innerHTML = 'Username: ' + currentUser.username;
     divEmail.innerHTML = "Email: " + currentUser.email;
-    divNoR.innerHTML = 'Number of rides offered so far: ' + counter
+    //divNoR.innerHTML = 'Number of rides offered so far: ' + counter
     //InnerText will only return the text value of the page with each element on a newline in plain text, 
     //while innerHTML will return the HTML content of everything inside the body tag,
 }
@@ -77,7 +77,6 @@ const logoutButton = document.getElementById("logout-btn");
 
 var isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"))//
 console.log(`Is user logged in? ${isLoggedIn}`)
-//could go at the bottom of the .js
 logoutButton.onclick = function LogOut() {
     if (isLoggedIn === true) {
         isLoggedIn = false;
