@@ -61,8 +61,7 @@ deleteButton.onclick = function () {
         let indexcurrent = users.indexOf(currentUser);//syntax arr.indexOf(searchElement[, fromIndex])
    //     if (indexcurrent > -1) {
             users.splice(indexcurrent, 1); // syntax var a = array.splice(start, deleteCount)
-            //updated LS USers array
-            //should i initiate users array here as well?
+            localStorage.setItem("users", JSON.stringify(users));
             window.location.href = "./registration.html";
             return true
     //    }
