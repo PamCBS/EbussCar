@@ -82,16 +82,16 @@ function hideFinalPrice()
 
 
 postButton.onclick = function postRoute () {
-    console.log("print")
+    let basePrice = calcBasePrice()
+    
 
-    if (startLocationInput.value === 0 || endLocationInput.value === 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
+    if (basePrice != 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
         
         var startLocation = startLocationInput.value;
         var endLocation = endLocationInput.value;
         var date = dateInput.value;
         var time = timeInput.value;
         var driverComission = driverComissionInput.value;
-        var basePrice = calcBasePrice();
         console.log('finalpricecheck')
         var finalPrice = calcFinalPrice();
         var seats = seatsInput.value;
