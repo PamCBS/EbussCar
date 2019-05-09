@@ -5,7 +5,7 @@ console.log("registration.js loaded")//this is debugging tip
 const submitButton = document.getElementById('submit-btn')
 const firstNameInput = document.getElementById("first-name")
 //this is not a var that holds value but a variable that binds the documents.
-//it make is it easier to code by calling var name and not getElementByID every time.
+//it make is it easier to code by calling variable name and not getElementByID every time.
 const lastNameInput = document.getElementById("last-name")
 const usernameInput = document.getElementById("username")
 const emailInput = document.getElementById("email")
