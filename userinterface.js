@@ -16,6 +16,8 @@ const allRidesLS = JSON.parse(localStorage.getItem("routes"))
 
 
 // Create a function to find a ride based on it's owner email
+//count of how many rides the user has offered:
+
 
 const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works
@@ -23,35 +25,43 @@ const findCurrent = () => {
         return users.email === activeUser
     })
 
+    return currentUser
+}
+
+const displayInfoCurrent = () => {
+
+    let currentUser = findCurrent()
+    
+        let counter = 0
+        for (let i = 0; i < allRidesLS.length; i++) {
+            if (allRidesLS[i].owner.toLowerCase().includes(activeUser.toLowerCase())) {
+                counter++
+            }
+        }
+      
+    
     divName.innerHTML = 'Name: ' + currentUser.firstName;
     divUsername.innerHTML = 'Username: ' + currentUser.username;
     divEmail.innerHTML = "Email: " + currentUser.email;
-    divNoR.innerHTML = 'Number of rides offered so far: ' + currentUser.NoR
+    divNoR.innerHTML = 'Number of rides offered so far: ' + counter
     //InnerText will only return the text value of the page with each element on a newline in plain text, 
     //while innerHTML will return the HTML content of everything inside the body tag,
 }
-findCurrent()
+    
+displayInfoCurrent()
 
-//count of how many rides the user has offered:
-if (users.email === activeUser) {
-    for (let counter = 0; counter < allRidesLS.length; counter++) {
-        divNoR = counter;
-    }
-}
 
 deleteButton.onclick = function () {
-    findCurrent()
+    let currentUser = findCurrent()
     console.log("delete button works")
-    var okButton = confirm(`Hi ${divName}, are you sure you want to delete your account?`)
+    var okButton = confirm(`Hi ${currentUser.firstName}, are you sure you want to delete your account?`)
     // the confirmation popup https://www.w3schools.com/jsref/met_win_confirm.asp
-    if (okButton == true) {
+    if (okButton) {
         console.log("if stat works too")
-        currentUser = allUsersLS.find((users) => {//to get access to currentUser variable again
-            return users.email === activeUser//for some reason it doesnt work
-        })
         let indexcurrent = users.indexOf(currentUser);//syntax arr.indexOf(searchElement[, fromIndex])
    //     if (indexcurrent > -1) {
             users.splice(indexcurrent, 1); // syntax var a = array.splice(start, deleteCount)
+            //updated LS USers array
             //should i initiate users array here as well?
             window.location.href = "./registration.html";
             return true
