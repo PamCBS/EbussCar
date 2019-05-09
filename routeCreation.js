@@ -23,6 +23,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //let basePrice = calcBasePrice()
 //let finalPrice = calcFinalPrice();
 
+<<<<<<< HEAD
+
+=======
 const activeUser = JSON.parse(localStorage.getItem("activeUser"))
 const allUsersLS = JSON.parse(localStorage.getItem("users"))
 
@@ -35,6 +38,7 @@ const findCurrent = () => {
     })
     return currentUser
 }
+>>>>>>> 5a718394e9d17d68d725ff5e640d34fef0dec56a
 
 
 function calcBasePrice() {
@@ -73,7 +77,7 @@ function calcFinalPrice() {
     divFinalPrice.innerHTML = "Route total price is " + finalPriceInput + " DKK";
 
 
-    return finalPrice;
+    return finalPriceInput
 }
 
 function hideFinalPrice()
@@ -84,16 +88,17 @@ function hideFinalPrice()
 
 
 postButton.onclick = function postRoute () {
-    let basePrice = calcBasePrice()
-    
+    console.log("print")
 
-    if (basePrice != 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
+    if (startLocationInput.value === 0 || endLocationInput.value === 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
         
+<<<<<<< HEAD
         var startLocation = startLocationInput.value;
         var endLocation = endLocationInput.value;
         var date = dateInput.value;
         var time = timeInput.value;
         var driverComission = driverComissionInput.value;
+        var basePrice = calcBasePrice();
         console.log('finalpricecheck')
         var finalPrice = calcFinalPrice();
         var seats = seatsInput.value;
@@ -101,6 +106,20 @@ postButton.onclick = function postRoute () {
 
 
         routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal))
+=======
+        var startLocation = startLocationInput.value
+        var endLocation = endLocationInput.value
+        var date = dateInput.value
+        var time = timeInput.value
+        var driverComission = driverComissionInput.value
+        var basePrice = calcBasePrice()
+        var finalPrice = calcFinalPrice()
+        var seats = seatsInput.value
+        var payPal = payPalInput.value
+        var owner = JSON.parse(localStorage.getItem("activeUser"))
+
+        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal, owner))
+>>>>>>> 5a718394e9d17d68d725ff5e640d34fef0dec56a
         localStorage.setItem("routes", JSON.stringify(routes));
         //let currentRide = route[i]
         //localStorage.setItem("currentRoute", JSON.stringify(currentRide));
