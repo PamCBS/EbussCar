@@ -70,7 +70,7 @@ function calcFinalPrice() {
     console.log('called')
     var finalPriceInput = calcBasePrice() + calcDriverComissionInput();
     divFinalPrice.style.display = 'block';
-    divFinalPrice.innerHTML = "Route total price is " + finalPrice + " DKK";
+    divFinalPrice.innerHTML = "Route total price is " + finalPriceInput + " DKK";
     return finalPrice;
 }
 
@@ -82,16 +82,16 @@ function hideFinalPrice()
 
 
 postButton.onclick = function postRoute () {
-    let basePrice = calcBasePrice()
-    
+    console.log("print")
 
-    if (basePrice != 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
+    if (startLocationInput.value === 0 || endLocationInput.value === 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
         
         var startLocation = startLocationInput.value;
         var endLocation = endLocationInput.value;
         var date = dateInput.value;
         var time = timeInput.value;
         var driverComission = driverComissionInput.value;
+        var basePrice = calcBasePrice();
         console.log('finalpricecheck')
         var finalPrice = calcFinalPrice();
         var seats = seatsInput.value;
