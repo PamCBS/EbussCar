@@ -71,6 +71,7 @@ function calcFinalPrice() {
     var finalPrice = calcBasePrice() + calcDriverComissionInput();
     divFinalPrice.style.display = 'block';
     divFinalPrice.innerHTML = "Route total price is " + finalPrice + " DKK";
+    return finalPrice;
 }
 
 function hideFinalPrice()
