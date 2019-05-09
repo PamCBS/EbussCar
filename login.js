@@ -50,11 +50,10 @@ loginButton.onclick = function () {
       //saving email to localStorage to have an owner of a ride
       localStorage.setItem("emailLoginInput.value", JSON.stringify(emailLoginInput.value))
 
-      window.location.href = "./driverWall.html";
       window.location.href = "./userinterface.html";
 
     } else {
-      resultSpan.innerText = "Email address and/or password is not registered in our system."
+      resultSpan.innerHTML = "Email address and/or password is not registered in our system."
     }
   }
 
@@ -67,8 +66,7 @@ loginButton.onclick = function () {
   //it's a little joke, we cannot remember users without a database
   //}
   return false;
-}//login fun ends
-
+}//login function ends
 
 function showPassword() {
   //this function allows User to see the password that he/she typed 
