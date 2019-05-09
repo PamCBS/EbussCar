@@ -68,7 +68,7 @@ function calcDriverComissionInput() {
 
 function calcFinalPrice() {
     console.log('called')
-    var finalPrice = calcBasePrice() + calcDriverComissionInput();
+    var finalPriceInput = calcBasePrice() + calcDriverComissionInput();
     divFinalPrice.style.display = 'block';
     divFinalPrice.innerHTML = "Route total price is " + finalPrice + " DKK";
     return finalPrice;
@@ -82,21 +82,23 @@ function hideFinalPrice()
 
 
 postButton.onclick = function postRoute () {
-    
+    console.log("print")
+
     if (startLocationInput.value === 0 || endLocationInput.value === 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
         
-        var startLocation = startLocationInput.value
-        var endLocation = endLocationInput.value
-        var date = dateInput.value
-        var time = timeInput.value
-        var driverComission = driverComissionInput.value
-        var basePrice = calcBasePrice()
-        var finalPrice = calcFinalPrice()
-        var seats = seatsInput.value
-        var payPal = payPalInput.value
-        var owner = JSON.parse(localStorage.getItem("activeUser"))
+        var startLocation = startLocationInput.value;
+        var endLocation = endLocationInput.value;
+        var date = dateInput.value;
+        var time = timeInput.value;
+        var driverComission = driverComissionInput.value;
+        var basePrice = calcBasePrice();
+        console.log('finalpricecheck')
+        var finalPrice = calcFinalPrice();
+        var seats = seatsInput.value;
+        var payPal = payPalInput.value;
 
-        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal, owner))
+
+        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal))
         localStorage.setItem("routes", JSON.stringify(routes));
         //let currentRide = route[i]
         //localStorage.setItem("currentRoute", JSON.stringify(currentRide));
@@ -107,6 +109,7 @@ postButton.onclick = function postRoute () {
         return false
     }
 }
+console.log("postButton works")
 
 //logout function:
 const logoutButton = document.getElementById("logout-btn");
