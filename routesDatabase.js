@@ -8,11 +8,11 @@ var  routes = []
 
 
 if (localStorage.getItem("routes") === null) {
-    routes = [new Route("Valby", "Flintholm", "01/06/2019", "12:00", 70, 70, 140, 4, "henrik.thorn@student.cbs.dk", "henrik.thorn@student.cbs.dk")];
+    routes = [new Route("Valby", "Flintholm", "01/06/2019", "12:00", 70, 70, 140, 4, "henrik.thorn@student.cbs.dk")];
 } else {
     routes = JSON.parse(localStorage.getItem("routes"));
     for (let i = 0; i < routes.length; i++) {
-        routes[i] = new Route(routes[i].startLocation, routes[i].endLocation, routes[i].date, routes[i].time, routes[i].driverComission, routes[i].basePrice, routes[i].finalPrice, routes[i].seats, routes[i].payPal, routes[i].owner);
+        routes[i] = new Route(routes[i].startLocation, routes[i].endLocation, routes[i].date, routes[i].time, routes[i].driverComission, routes[i].basePrice, routes[i].finalPrice, routes[i].seats, routes[i].payPal);
     }
 }
 
