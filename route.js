@@ -17,7 +17,7 @@ class Route{
         this.finalPrice = finalPrice;
         this.seats = seats;
         this.payPal = payPal;
-        this.owner = owner;
+
     }
 
 }
