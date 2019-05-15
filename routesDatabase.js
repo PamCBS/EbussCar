@@ -3,7 +3,7 @@ console.log("routesDatabase.js loaded")
 
 var  routes = []
 //equals an empty array to save new users
-//users.push adds new users to the array, that means that it will be saved only for one session
+//routes.push adds new routes to the array, that means that it will be saved only for one session
 // local storage sits in the browser, works like cookies.
 
 
