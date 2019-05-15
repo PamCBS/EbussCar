@@ -104,7 +104,7 @@ postButton.onclick = function postRoute () {
         //let currentRide = route[i]
         //localStorage.setItem("currentRoute", JSON.stringify(currentRide));
         console.log(routes)
-        window.location.href = "./driverWall.html"
+        window.location.href = "./userinterface.html"
     } else {
         displaySpan.innerText = "You must fill out all fields"
         return false
