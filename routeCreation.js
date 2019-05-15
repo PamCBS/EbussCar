@@ -1,5 +1,9 @@
+//this is debugging tip
+
 console.log("routeCreation.js loaded")
 
+// by using const we make the scope of the variables global
+// it makes is it easier to code by calling variable name and not getElementByID every time.
 const postButton = document.getElementById('post-btn');
 const startLocationInput = document.getElementById('start-location');
 const endLocationInput = document.getElementById('end-location');
@@ -14,19 +18,14 @@ const driverComission = routeCreation.elements["driver-comission"];
 const divFinalPrice = document.getElementById('finalPrice');
 const displaySpan = document.getElementById("display");
 
-//this is debugging tip
-window.addEventListener('DOMContentLoaded', (event) => {
-    date.min = new Date().toISOString().split("T")[0];
-});
+// to limit the miniminum date available for choosing  to the present day the following method was used (source: https://stackoverflow.com/questions/32192922/how-do-i-get-a-date-in-yyyy-mm-dd-format)
+date.min = new Date().toISOString().split("T")[0];
 
-
-//let basePrice = calcBasePrice()
-//let finalPrice = calcFinalPrice();
 
 const activeUser = JSON.parse(localStorage.getItem("activeUser"))
 const allUsersLS = JSON.parse(localStorage.getItem("users"))
 
-// Create a function to find a ride based on it's owner email
+// create a function to find a ride based on it's owner email
 
 const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works
@@ -36,6 +35,7 @@ const findCurrent = () => {
     return currentUser
 }
 
+// to calculate the base price we used set values dependent on the available locations
 
 function calcBasePrice() {
 
@@ -56,6 +56,7 @@ function calcBasePrice() {
     }
   return basePrice;
 }
+// driver users can input their own commission values which will be added later on to the final price of the created route
 
 function calcDriverComissionInput() {
 
@@ -66,6 +67,9 @@ function calcDriverComissionInput() {
     return howMuch;
 }
 
+// in order to get the final price, the base price and driver commission had to be added up
+// it is displayed as the users selects the options (source: http://javascript-coder.com/javascript-form/javascript-calculator-script.phtml)
+
 function calcFinalPrice() {
     console.log('called')
     var finalPriceInput = calcBasePrice() + calcDriverComissionInput();
@@ -74,25 +78,33 @@ function calcFinalPrice() {
     return finalPrice;
 }
 
+// in order to hide the final price if nothing is selected
+
 function hideFinalPrice()
 {
     var divFinalPrice = document.getElementById('finalPrice');
     divFinalPrice.style.display='none';
 }
 
+// in order to register a new route, the post button needs to be pressed
 
 postButton.onclick = function postRoute () {
-    let basePrice = calcBasePrice()
-    
 
-    if (basePrice != 0 || dateInput.value === 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
+// defining the base price value as the option for detecting whether any of the start or destination options were selected
+
+    var basePrice = calcBasePrice()
+    
+// unfortunately the same method used for making sure all the user fills all fields in the user registration step cannot work here fully
+// it does however work up until the end and start location selection, otherwise the route is sent to the local storage with the existing values
+// possible errors start from the date selection onwards, identical date selection based on .value.length (used in user registration) ignores the function all together
+   
+if (basePrice != 0 || dateInput.value != 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
         
         var startLocation = startLocationInput.value;
         var endLocation = endLocationInput.value;
         var date = dateInput.value;
         var time = timeInput.value;
         var driverComission = driverComissionInput.value;
-        console.log('finalpricecheck')
         var finalPrice = calcFinalPrice();
         var seats = seatsInput.value;
         var payPal = payPalInput.value;
@@ -101,8 +113,6 @@ postButton.onclick = function postRoute () {
 
         routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal))
         localStorage.setItem("routes", JSON.stringify(routes));
-        //let currentRide = route[i]
-        //localStorage.setItem("currentRoute", JSON.stringify(currentRide));
         console.log(routes)
         window.location.href = "./userinterface.html"
     } else {
@@ -110,7 +120,7 @@ postButton.onclick = function postRoute () {
         return false
     }
 }
-console.log("postButton works")
+console.log("postButton works")//debugger
 
 //logout function:
 const logoutButton = document.getElementById("logout-btn");
