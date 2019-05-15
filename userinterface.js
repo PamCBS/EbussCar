@@ -3,7 +3,6 @@ console.log("Userinterface.js is connected")
 const divName = document.getElementById("profile-name");
 const divUsername = document.getElementById("profile-username");
 const divEmail = document.getElementById("profile-email");
-const divNoR = document.getElementById("profile-NofR");
 const deleteButton = document.getElementById("delete-btn")
 const resultSpan = document.getElementById("resultSpan")
 
@@ -16,9 +15,6 @@ const allRidesLS = JSON.parse(localStorage.getItem("routes"))
 
 
 // Create a function to find a ride based on it's owner email
-//count of how many rides the user has offered:
-
-
 const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works
     const currentUser = allUsersLS.find((users) => {
@@ -31,19 +27,12 @@ const findCurrent = () => {
 const displayInfoCurrent = () => {
 
     let currentUser = findCurrent()
-    
-        // let counter = 0
-        // for (let i = 0; i < allRidesLS.length; i++) {
-        //     if (allRidesLS[i].owner.toLowerCase().includes(activeUser.toLowerCase())) {
-        //         counter++
-        //     }
-        // }
       
-        console.log("play")
+    console.log("play") //debugger
     divName.innerHTML = 'Name: ' + currentUser.firstName;
     divUsername.innerHTML = 'Username: ' + currentUser.username;
     divEmail.innerHTML = "Email: " + currentUser.email;
-    //divNoR.innerHTML = 'Number of rides offered so far: ' + counter
+
     //InnerText will only return the text value of the page with each element on a newline in plain text, 
     //while innerHTML will return the HTML content of everything inside the body tag,
 }
