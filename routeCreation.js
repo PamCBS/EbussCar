@@ -18,9 +18,6 @@ const driverComission = routeCreation.elements["driver-comission"];
 const divFinalPrice = document.getElementById('finalPrice');
 const displaySpan = document.getElementById("display");
 
-// to limit the miniminum date available for choosing  to the present day the following method was used (source: https://stackoverflow.com/questions/32192922/how-do-i-get-a-date-in-yyyy-mm-dd-format)
-date.min = new Date().toISOString().split("T")[0];
-
 
 const activeUser = JSON.parse(localStorage.getItem("activeUser"))
 const allUsersLS = JSON.parse(localStorage.getItem("users"))
@@ -34,6 +31,10 @@ const findCurrent = () => {
     })
     return currentUser
 }
+
+// to limit the miniminum date available for choosing  to the present day the following method was used (source: https://stackoverflow.com/questions/32192922/how-do-i-get-a-date-in-yyyy-mm-dd-format)
+date.min = new Date().toISOString().split("T")[0];
+
 
 // to calculate the base price we used set values dependent on the available locations
 
