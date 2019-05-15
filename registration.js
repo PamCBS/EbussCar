@@ -5,7 +5,7 @@ console.log("registration.js loaded")//this is debugging tip
 const submitButton = document.getElementById('submit-btn')
 const firstNameInput = document.getElementById("first-name")
 //this is not a var that holds value but a variable that binds the documents.
-//it make is it easier to code by calling variable name and not getElementByID every time.
+//it makes is it easier to code by calling variable name and not getElementByID every time.
 const lastNameInput = document.getElementById("last-name")
 const usernameInput = document.getElementById("username")
 const emailInput = document.getElementById("email")
@@ -71,7 +71,7 @@ submitButton.onclick = function () {
         users.push(new User(firstName, lastName, username, email, DofB, User.prototype.hashPassword(password)));//we hash the password here and not in the userDatabase.js so we can still access the value of password, we do not hash it right away
         localStorage.setItem("users", JSON.stringify(users));
         console.log(users)
-        window.location.href = "./login.html"; //for some reason href method worsk but assign method does not
+        window.location.href = "./login.html"; //for some reason href method works but assign method does not
     } else {
         resultSpan.innerText = "You must accept Terms and Conditions to complete registration"
         return false
