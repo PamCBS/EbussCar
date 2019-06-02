@@ -1,5 +1,5 @@
 //for users' data: 
-//driver is an object, where we store information about name, birthdate, car, email etc
+//user is an object, where we store information about name, birthdate, car, email etc
 //for every class that you create, build a individual JS.
 
 console.log("User.js loaded")
