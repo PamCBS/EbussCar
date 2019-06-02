@@ -115,7 +115,7 @@ if (basePrice != 0 || dateInput.value != 0 && driverComissionInput.value != "" &
         routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal, owner))
         localStorage.setItem("routes", JSON.stringify(routes));
         console.log(routes)
-    //    window.location.href = "./userinterface.html"
+        window.location.href = "./userinterface.html"
     } else {
         displaySpan.innerText = "You must fill out all fields"
         return false
