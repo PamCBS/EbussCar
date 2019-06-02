@@ -22,7 +22,7 @@ const displaySpan = document.getElementById("display");
 const activeUser = JSON.parse(localStorage.getItem("activeUser"))
 const allUsersLS = JSON.parse(localStorage.getItem("users"))
 
-// create a function to find a ride based on it's owner email
+// create a function to find an owner based on it's owner email
 
 const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works
@@ -76,7 +76,7 @@ function calcFinalPrice() {
     var finalPriceInput = calcBasePrice() + calcDriverComissionInput();
     divFinalPrice.style.display = 'block';
     divFinalPrice.innerHTML = "Route total price is " + finalPriceInput + " DKK";
-    return finalPrice;
+    return finalPriceInput;
 }
 
 // in order to hide the final price if nothing is selected
@@ -99,8 +99,8 @@ postButton.onclick = function postRoute () {
 // it does however work up until the end and start location selection, otherwise the route is sent to the local storage with the existing values
 // possible errors start from the date selection onwards, identical date selection based on .value.length (used in user registration) ignores the function all together
    
-if (basePrice != 0 || dateInput.value != 0 || driverComissionInput.value === 0 || seatsInput.value === 0 || payPalInput.value === 0) {
-        
+if (basePrice != 0 || dateInput.value != 0 && driverComissionInput.value != "" && seatsInput.value != "" && payPalInput.value != "") {
+        console.log("new check")
         var startLocation = startLocationInput.value;
         var endLocation = endLocationInput.value;
         var date = dateInput.value;
@@ -112,10 +112,10 @@ if (basePrice != 0 || dateInput.value != 0 || driverComissionInput.value === 0 |
         var owner = JSON.parse(localStorage.getItem("activeUser"))
 
 
-        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal))
+        routes.push(new Route(startLocation, endLocation, date, time, driverComission, basePrice, finalPrice, seats, payPal, owner))
         localStorage.setItem("routes", JSON.stringify(routes));
         console.log(routes)
-        window.location.href = "./userinterface.html"
+    //    window.location.href = "./userinterface.html"
     } else {
         displaySpan.innerText = "You must fill out all fields"
         return false
