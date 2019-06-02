@@ -22,7 +22,7 @@ const displaySpan = document.getElementById("display");
 const activeUser = JSON.parse(localStorage.getItem("activeUser"))
 const allUsersLS = JSON.parse(localStorage.getItem("users"))
 
-// create a function to find a ride based on it's owner email
+// create a function to find an owner based on it's owner email
 
 const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works

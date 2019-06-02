@@ -17,7 +17,7 @@ const allRidesLS = JSON.parse(localStorage.getItem("routes"))
 // Create a function to find a ride based on it's owner email
 const findCurrent = () => {
     console.log("function findCurent is called1")//to make sure it event works
-    const currentUser = allUsersLS.find((users) => {
+    var currentUser = allUsersLS.find((users) => {//I changed here var instead of 'const' because we use the same variable below with different value
         return users.email === activeUser
     })
 
@@ -28,7 +28,7 @@ const displayInfoCurrent = () => {
 
     let currentUser = findCurrent()
       
-    console.log("play") //debugger
+    console.log("displayInfoCurrent Works") //debugger
     divName.innerHTML = 'Name: ' + currentUser.firstName;
     divUsername.innerHTML = 'Username: ' + currentUser.username;
     divEmail.innerHTML = "Email: " + currentUser.email;
@@ -46,7 +46,7 @@ deleteButton.onclick = function () {
     var okButton = confirm(`Hi ${currentUser.firstName}, are you sure you want to delete your account?`)
     // the confirmation popup https://www.w3schools.com/jsref/met_win_confirm.asp
     if (okButton) {
-        console.log("if stat works too")
+        console.log("if stat works too")//debugger
         let indexcurrent = users.indexOf(currentUser);//syntax arr.indexOf(searchElement[, fromIndex])
    //     if (indexcurrent > -1) {
             users.splice(indexcurrent, 1); // syntax var a = array.splice(start, deleteCount)

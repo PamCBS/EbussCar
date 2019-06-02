@@ -68,7 +68,7 @@ submitButton.onclick = function () {
         var DofB = DofBInput.value
         var password = passwordInput.value
 
-        users.push(new User(firstName, lastName, username, email, DofB, User.prototype.hashPassword(password)));//we hash the password here and not in the userDatabase.js so we can still access the value of password, we do not hash it right away
+        users.push(new User(firstName, lastName, username, email, DofB, User.prototype.hashPassword(password)));//we hash the password here and in the userDatabase.js so we can still access the value of password, we do not hash it right away
         localStorage.setItem("users", JSON.stringify(users));
         console.log(users)
         window.location.href = "./login.html"; //for some reason href method works but assign method does not
