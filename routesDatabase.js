@@ -2,8 +2,8 @@
 console.log("routesDatabase.js loaded")
 
 var  routes = []
-//equals an empty array to save new users
-//routes.push adds new routes to the array, that means that it will be saved only for one session
+//equals an empty array to save new user
+//routes.push adds new routes to the array
 // local storage sits in the browser, works like cookies.
 
 
@@ -12,7 +12,7 @@ if (localStorage.getItem("routes") === null) {
 } else {
     routes = JSON.parse(localStorage.getItem("routes"));
     for (let i = 0; i < routes.length; i++) {
-        routes[i] = new Route(routes[i].startLocation, routes[i].endLocation, routes[i].date, routes[i].time, routes[i].driverComission, routes[i].basePrice, routes[i].finalPrice, routes[i].seats, routes[i].payPal);
+        routes[i] = new Route(routes[i].startLocation, routes[i].endLocation, routes[i].date, routes[i].time, routes[i].driverComission, routes[i].basePrice, routes[i].finalPrice, routes[i].seats, routes[i].payPal, routes[i].owner);
     }
 }
 
