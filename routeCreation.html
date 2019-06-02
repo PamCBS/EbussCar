@@ -18,7 +18,6 @@
     <!-- end of Navigation bar -->
 <body onload="hideFinalPrice ()">
     <div id="wrap">
-        <!-- we do not have navigation bar in here because we want to restict access to our creation and feedback pages only to registered users -->
         <h1>Create a new route</h1>
         <form id="route-creation">
             <fieldset>
@@ -44,7 +43,7 @@
                 </div>
 
                 <div>
-                    <p>Date <input type="date" id="date" />
+                    <p>Date <input type="date" value="0" id="date" />
                 </div>
                 </p>
 
@@ -54,17 +53,17 @@
                 </p>
 
                 <div>
-                    <p>Driver Mark-up <input type="text" id="driver-comission" placeholder="Your mark-up" onchange="calcFinalPrice ()">
+                    <p>Driver Mark-up <input type="text" value="0" id="driver-comission" placeholder="Your mark-up" onchange="calcFinalPrice ()">
                     </p>
                 </div>
 
                 <div>
-                    <p>Available Seats <input type="number" id="seats"
+                    <p>Available Seats <input type="number" value = "0" id="seats"
                             placeholder="Please provide the number of seats you'd like to offer" min="1" max="4">
                     </p>
                 </div>
                 <div>
-                    <p>PayPal <input type="text" id="paypal" placeholder="Provide your PayPal ID or email"></p>
+                    <p>PayPal <input type="text" value = "0" id="paypal" placeholder="Provide your PayPal ID or email"></p>
                 </div>
 
                 <div id="finalPrice"></div>
